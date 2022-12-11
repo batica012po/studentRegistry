@@ -1,0 +1,70 @@
+<h3 class="text-center"><i>Novi profesor</i></h3>
+<div class="d-flex d-flex justify-content-center p-3">
+    <div *ngIf="profesorForm">
+        <form [formGroup]="profesorForm">
+            <div class="d-flex flex-direction-row justify-content-around">
+                <div class="d-flex flex-column col-lg-7 col-md-8 m-3 p-3">
+
+                    <div class="d-flex flex-column mt-2">
+                        <label for="name">Ime</label>
+                        <input type="text" id="name" class="form-control" formControlName="ime">
+                        <p class="alert alert-danger" *ngIf="hasErrors('ime', 'required')" >
+                            <small>Polje je prazno</small>
+                          </p>
+                          <p class="alert alert-danger" *ngIf="hasErrors('ime', 'minlength') && (profesorForm?.touched || profesorForm?.dirty)" >
+                            <small>Ime mora biti duze od 2 karaktera</small>
+                          </p>
+                    </div>
+                    <div class="d-flex flex-column mt-2">
+                        <label for="surname">Prezime</label>
+                        <input type="text" id="surname" class="form-control" formControlName="prezime">
+                        <p class="alert alert-danger" *ngIf="hasErrors('prezime', 'required')" >
+                            <small>Polje je prazno</small>
+                          </p>
+                          <p class="alert alert-danger" *ngIf="hasErrors('prezime', 'minlength') && (profesorForm?.touched || profesorForm?.dirty)" >
+                            <small>Prezime mora biti duze od 2 karaktera</small>
+                          </p>
+                    </div>
+                    <div class="d-flex flex-column mt-2">
+                        <label for="email">E-mail</label>
+                        <input type="text" id="email" class="form-control" formControlName="email">
+                        <p class="alert alert-danger" *ngIf="hasErrors('email', 'required')" >
+                            <small>Polje je prazno</small>
+                          </p>
+                    </div>
+                </div>
+
+                <div class="d-flex flex-column col-lg-7 col-md-8 m-3 p-3">
+                    <div class="d-flex flex-column mt-2">
+                        <label for="dob">Datum rodjenja</label>
+                        <input type="text" id="dob" class="form-control" formControlName="datumRodjenja"  />
+                        <p class="alert alert-danger" *ngIf="hasErrors('datumRodjenja', 'required')">
+                            <small>Polje je prazno</small>
+                          </p>
+                    </div>
+                    <div class="d-flex flex-column mt-2">
+                        <label for="adress">Adresa</label>
+                        <input type="text" id="adress" class="form-control" formControlName="ulica">
+                        <p class="alert alert-danger" *ngIf="hasErrors('ulica', 'required')" >
+                            <small>Polje je prazno</small>
+                          </p>
+                    </div>
+                   <div class="d-flex flex-column mt-2">
+                        <label for="city">Grad</label>
+                        <input type="text" id="city" class="form-control" formControlName="grad">
+                        <p class="alert alert-danger" *ngIf="hasErrors('grad', 'required')" >
+                            <small>Polje je prazno</small>
+                          </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="d-flex justify-content-around">
+                <button type="button" class="btn btn-danger" routerLink="/profesori">Otkazi</button>
+                <button (click)="dodajProfesora()" type="button" class="btn btn-success" [disabled]="profesorForm.invalid">Sacuvaj</button>
+              </div>
+        </form>
+
+    </div>
+
+</div>

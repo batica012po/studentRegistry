@@ -1,0 +1,49 @@
+<h3 class="text-center">Izmeni</h3>
+<div class="d-flex d-flex justify-content-center p-3">
+  <div *ngIf="profesorForm">
+    <form [formGroup]="profesorForm">
+      <div class="d-flex flex-direction-row justify-content-around">
+        <div class="d-flex flex-column col-lg-7 col-md-8 m-3 p-3">
+
+          <div class="d-flex flex-column">
+            <label for="name">Ime</label>
+            <input type="text" id="name" class="form-control" formControlName="ime"  />
+          </div>
+
+          <div class="d-flex flex-column mt-2">
+            <label for="surname">Prezime</label>
+            <input type="text" id="surname" class="form-control" formControlName="prezime"  />
+          </div>
+
+          <div class="d-flex flex-column mt-2">
+            <label for="email">E-mail</label>
+            <input type="text" id="email" class="form-control" formControlName="email"  />
+          </div>
+        </div>
+
+        <div class="d-flex flex-column col-lg-7 col-md-8 m-3 p-3">
+          <div class="d-flex flex-column">
+            <label for="dob">Datum rodjenja</label>
+            <input type="text" id="dob" class="form-control" formControlName="datumRodjenja"  />
+          </div>
+
+          <div class="d-flex flex-column mt-2">
+            <label for="adress">Adresa</label>
+            <input type="text" id="adress" class="form-control" formControlName="ulica"  />
+          </div>
+
+          <div class="d-flex flex-column mt-2">
+            <label for="city">Grad</label>
+            <input type="text" id="city" class="form-control" formControlName="grad" />
+          </div>
+        </div>
+      </div>
+
+      <div class="d-flex justify-content-around">
+        <button type="button" class="btn btn-danger" routerLink="/profesori">Otkazi</button>
+        <button (click)="updateProfesor()" type="button" class="btn btn-success" [disabled]="profesorForm.invalid">Sacuvaj</button>
+      </div>
+    </form>
+  </div>
+</div>
+  

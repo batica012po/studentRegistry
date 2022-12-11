@@ -1,0 +1,83 @@
+<div class="container">
+  <div class="m-5">
+    <button class="btn btn-success" (click)="dodajProfesora()">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+      class="bi bi-plus-circle pb-1 pr-1" viewBox="0 0 16 16"><path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8
+      8 0 1 0 8 0a8 8 0 0 0 0 16z"/><path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0
+      1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+      </svg>Dodaj profesora
+    </button>
+    <table class="table table hover">
+      <thead>
+        <th>ID</th>
+        <th>Ime</th>
+        <th>Prezime</th>
+        <th>E-mail</th>
+        <th>Options</th>
+      </thead>
+
+      <tbody>
+        <tr [formGroup]="filterForm">
+          <td></td>
+          <td><input type="text" class="form-control" placeholder="Pretrazi po imenu..." formControlName="ime"></td>
+          <td><input type="text" class="form-control" placeholder="Pretrazi po prezimenu..." formControlName="prezime">
+          </td>
+          <td><input type="text" class="form-control" placeholder="Pretrazi po E-mail-u..." formControlName="email">
+          </td>
+
+          <td>
+            <button class="btn btn-outline-success" (click)="filtriraj()">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                class="bi bi-search pb-1 pr-1" viewBox="0 0 16 16">
+                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397
+              1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007
+              1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+              </svg>Pretrazi
+            </button>&nbsp;&nbsp;
+            <button class="btn btn-outline-danger" (click)="resetujFiltere()">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+              class="bi bi-x-lg pb-1 pr-1" viewBox="0 0 16 16"><path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8
+              7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146
+              5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"/>
+              </svg>Resetuj
+            </button>
+          </td>
+        </tr>
+
+
+        <tr *ngFor="let profesori of profesori">
+          <td>{{profesori.id}}</td>
+          <td>{{profesori.ime}}</td>
+          <td>{{profesori.prezime}}</td>
+          <td>{{profesori.email}}</td>
+
+          <td>
+            <button class="btn btn-danger" (click)="potvrdaBrisanja(profesori.id)">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+              class="bi bi-trash pb-1 pr-1" viewBox="0 0 16 16"><path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0
+              1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1
+              .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/><path fill-rule="evenodd"
+              d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1
+              1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1
+              1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
+              </svg>Izbrisi
+            </button> &nbsp;
+            <button class="btn btn-warning" (click)="prikaziDetalje(profesori.id)">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+              class="bi bi-journal-text pb-1 pr-1" viewBox="0 0 16 16"><path d="M5 10.5a.5.5 0 0 1
+              .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5zm0-2a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0
+              1h-5a.5.5 0 0 1-.5-.5zm0-2a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0
+              1-.5-.5zm0-2a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5z"/><path d="M3
+              0h10a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-1h1v1a1 1 0 0 0 1 1h10a1 1 0 0
+              0 1-1V2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v1H1V2a2 2 0 0 1 2-2z"/><path d="M1 5v-.5a.5.5
+              0 0 1 1 0V5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0V8h.5a.5.5
+              0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0v.5h.5a.5.5 0 0 1 0 1h-2a.5.5
+              0 0 1 0-1H1z"/></svg>Detalji
+            </button>
+          </td>
+
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

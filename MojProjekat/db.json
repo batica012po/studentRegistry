@@ -1,0 +1,105 @@
+{
+  "students": [
+    {
+      "ime": "Milos",
+      "prezime": "Milosevic",
+      "brojIndeksa": "123/2022",
+      "datumRodjenja": "08/03/1999",
+      "ulica": "Nemanjina 1",
+      "grad": "Beograd",
+      "id": 1
+    },
+    {
+      "id": 2,
+      "ime": "Marko",
+      "prezime": "Markovic",
+      "brojIndeksa": "123/2022",
+      "datumRodjenja": "12/05/1998",
+      "grad": "Beograd",
+      "ulica": "Nemanjina 1"
+    },
+    {
+      "id": 3,
+      "ime": "Petar",
+      "prezime": "Petrovic",
+      "brojIndeksa": "123/2022",
+      "datumRodjenja": "14/11/1998",
+      "grad": "Beograd",
+      "ulica": "Nemanjina 1"
+    },
+    {
+      "id": 4,
+      "ime": "Janko",
+      "prezime": "Jankovic",
+      "brojIndeksa": "123/2022",
+      "datumRodjenja": "18/05/2000",
+      "grad": "Beograd",
+      "ulica": "Nemanjina 1"
+    },
+    {
+      "ime": "Milan",
+      "prezime": "Boskovic",
+      "brojIndeksa": "1i1/0029/19",
+      "datumRodjenja": "23/07/2000",
+      "ulica": "Nemanjina 12",
+      "grad": "Pozarevac",
+      "id": 5
+    },
+    {
+      "ime": "Petar",
+      "prezime": "Ivkovic",
+      "brojIndeksa": "1I1/0044/18",
+      "datumRodjenja": "14.05.1998",
+      "ulica": "Nemanjina 1",
+      "grad": "Beograd",
+      "id": 6
+    }
+  ],
+  "profesori": [
+    {
+      "ime": "Dusan",
+      "prezime": "Markovic",
+      "email": "dusanmarkovic@gmail.com",
+      "datumRodjenja": "14/02/1974",
+      "ulica": "Nemanjina 1",
+      "grad": "Beograd",
+      "id": 1
+    },
+    {
+      "id": 2,
+      "ime": "Petar",
+      "prezime": "Loncar",
+      "datumRodjenja": "24/04/1964",
+      "ulica": "Nemanjina 1",
+      "grad": "Beograd",
+      "email": "petarloncar@gmail.com"
+    },
+    {
+      "id": 3,
+      "ime": "Suzana",
+      "prezime": "Mijatovic",
+      "datumRodjenja": "12/08/1978",
+      "ulica": "Nemanjina 1",
+      "grad": "Beograd",
+      "email": "suzanamijatovic@gmail.com"
+    },
+    {
+      "id": 4,
+      "ime": "Vesna",
+      "prezime": "Randjelovic",
+      "datumRodjenja": "04/07/1984",
+      "ulica": "Nemanjina 1",
+      "grad": "Beograd",
+      "email": "vesnarandjelovic@gmail.com"
+    },
+    {
+      "id": 5,
+      "ime": "Mijat",
+      "prezime": "Ivic",
+      "datumRodjenja": "04/07/1984",
+      "ulica": "Nemanjina 1",
+      "grad": "Beograd",
+      "email": "mijativic@gmail.com"
+    }
+  ]
+}
